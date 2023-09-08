@@ -9,12 +9,23 @@
 
 NAME        := fdf
 CC        := gcc
-FLAGS    := -Wall -Wextra -Werror 
+FLAGS    := -Wall -Wextra -Werror -g
 ################################################################################
 #                                 PROGRAM'S SRCS                               #
 ################################################################################
 
 SRCS        :=      fenetre.c \
+					get_next_line.c \
+					get_next_line_utils.c \
+					ft_atoi.c \
+					innit_need.c \
+					dessin.c \
+					calculs_pts.c \
+					key.c \
+					draw.c \
+					couleurs.c \
+					
+
                           
 OBJS        := $(SRCS:.c=.o)
 
