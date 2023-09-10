@@ -14,7 +14,7 @@ FLAGS    := -Wall -Wextra -Werror -g
 #                                 PROGRAM'S SRCS                               #
 ################################################################################
 
-SRCS        :=      fenetre.c \
+SRCS        :=      main.c \
 					get_next_line.c \
 					get_next_line_utils.c \
 					ft_atoi.c \

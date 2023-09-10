@@ -6,7 +6,7 @@
 /*   By: hlasota <hlasota@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:09:47 by hlasota           #+#    #+#             */
-/*   Updated: 2023/09/07 17:22:28 by hlasota          ###   ########.fr       */
+/*   Updated: 2023/09/10 11:33:49 by hlasota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fdf.h"
@@ -39,12 +39,16 @@ void	draw_line(t_line line)
 	pixel_y = line.begin_y;
 	delta_y = line.end_y - line.begin_y;
 	delta_x = line.end_x - line.begin_x;
-	pixels = sqrt(ft_absol(delta_x * delta_x) + ft_absol(delta_y * delta_y));
+	pixels = sqrt(delta_x * delta_x + delta_y * delta_y);
 	delta_x /= pixels;
 	delta_y /= pixels;
 	while (pixels)
 	{
-		my_mlx_pixel_put(&line.img, pixel_x, pixel_y, line.b_color);
+		if (pixel_y < 0)
+			break ;
+		if (pixel_x > -1)
+			my_mlx_pixel_put(&line.img, ft_absol(pixel_x),
+				pixel_y, line.b_color);
 		pixel_x += delta_x;
 		pixel_y += delta_y;
 		--pixels;
